@@ -2,48 +2,48 @@ var expect = chai.expect
 var singlyLinkedList;
 var node;
 
-beforeEach(function(){
-  singlyLinkedList = new SinglyLinkedList
-  node = new Node(15)
-})
+beforeEach(function () {
+  singlyLinkedList = new SinglyLinkedList();
+  node = new Node(15);
+});
 
-describe("#singlyLinkedList", function(){
-  it("contains a head that is null", function(){
-    expect(singlyLinkedList.head).to.equal(null)
-    expect(singlyLinkedList.tail).to.equal(null)
-    expect(singlyLinkedList.hasOwnProperty('head')).to.equal(true)
-    expect(singlyLinkedList.hasOwnProperty('tail')).to.equal(true)
+describe('#singlyLinkedList', function () {
+  it('contains a head that is null', function () {
+    expect(singlyLinkedList.head).to.equal(null);
+    expect(singlyLinkedList.tail).to.equal(null);
+    expect(singlyLinkedList.hasOwnProperty('head')).to.equal(true);
+    expect(singlyLinkedList.hasOwnProperty('tail')).to.equal(true);
   });
-  it("contains a length property that begins at 0", function(){
-    expect(singlyLinkedList.length).to.equal(0)
-    expect(singlyLinkedList.hasOwnProperty('length')).to.equal(true)
+  it('contains a length property that begins at 0', function () {
+    expect(singlyLinkedList.length).to.equal(0);
+    expect(singlyLinkedList.hasOwnProperty('length')).to.equal(true);
   });
 });
 
-describe("#Node", function(){
-  it("contains a value", function(){
-    expect(node.val).to.equal(15)
-    expect(node.hasOwnProperty('val')).to.equal(true)
-    expect(node.hasOwnProperty('next')).to.equal(true)
+describe('#Node', function () {
+  it('contains a value', function () {
+    expect(node.val).to.equal(15);
+    expect(node.hasOwnProperty('val')).to.equal(true);
+    expect(node.hasOwnProperty('next')).to.equal(true);
   });
 });
 
-describe("#push", function(){
-  it("inserts a node at the end of the list and increments the length of the list", function(){
-    singlyLinkedList.push(5)
-    expect(singlyLinkedList.length).to.equal(1)
-    expect(singlyLinkedList.head.val).to.equal(5)
-    singlyLinkedList.push(10)
-    expect(singlyLinkedList.length).to.equal(2)
-    expect(singlyLinkedList.head.next.val).to.equal(10)
-    singlyLinkedList.push(15)
-    expect(singlyLinkedList.length).to.equal(3)
-    expect(singlyLinkedList.head.next.next.val).to.equal(15)
+describe('#push', function () {
+  it('inserts a node at the end of the list and increments the length of the list', function () {
+    singlyLinkedList.push(5);
+    expect(singlyLinkedList.length).to.equal(1);
+    expect(singlyLinkedList.head.val).to.equal(5);
+    singlyLinkedList.push(10);
+    expect(singlyLinkedList.length).to.equal(2);
+    expect(singlyLinkedList.head.next.val).to.equal(10);
+    singlyLinkedList.push(15);
+    expect(singlyLinkedList.length).to.equal(3);
+    expect(singlyLinkedList.head.next.next.val).to.equal(15);
   });
-  it("returns the singlyLinkedList so that the method can be chained", function(){
-    singlyLinkedList.push(5).push(10).push(15)
-    expect(singlyLinkedList.length).to.equal(3)
-    expect(singlyLinkedList.head.next.next.val).to.equal(15)
+  it('returns the singlyLinkedList so that the method can be chained', function () {
+    singlyLinkedList.push(5).push(10).push(15);
+    expect(singlyLinkedList.length).to.equal(3);
+    expect(singlyLinkedList.head.next.next.val).to.equal(15);
   });
 });
 
